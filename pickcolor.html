@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Speech Recognition</title>
+    <link rel="stylesheet" href="pickcolor.css">
+    <a href="final result/finaloutcome.html">
+        <img src="images/flowerman.png" alt="Next Page" style="position: fixed; bottom: 0; left: 0; width: 250px;">
+
+
+    </a>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+        h1 {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-weight: bold;
+            font-size: 150px;
+            position: relative;
+            z-index: 1;
+        }
+        .line {
+            position: absolute;
+            width: 2px;
+            height: 100vh;
+            background-color: transparent;
+            animation: animateLine 5s linear infinite;
+            z-index: 0;
+        }
+        @keyframes animateLine {
+            0% {
+                transform: translateY(-100vh);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>say a color</h1>
+    <script>
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        function createLine() {
+            var line = document.createElement('div');
+            line.classList.add('line');
+            line.style.left = Math.random() * 100 + '%';
+            line.style.backgroundColor = getRandomColor();
+            document.body.appendChild(line);
+        }
+
+        setInterval(createLine, 500); // Create a new line every 0.5 seconds
+    </script>
+    <button id="pickWord">SPEAK</button>
+    <p id="spokenColor" class="spoken-color"></p>
+    <button id="stopSpeech">Submit</button>
+    <div style="font-family: 'Little Kids Handwriting', cursive;"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/addons/p5.sound.min.js"></script>
+    <script src="p5.speech.js"></script>
+    <script>
+        let lang = navigator.language || 'en-US';
+        let speechRec = new p5.SpeechRec(lang, gotSpeech);
+
+        let continuous = true;
+        let interim = false;
+
+        document.getElementById('pickWord').addEventListener('click', function() {
+            speechRec.start(continuous, interim);
+        });
+
+        document.getElementById('stopSpeech').addEventListener('click', function() {
+            speechRec.stop();
+        });
+
+        function gotSpeech() {
+            if (speechRec.resultValue) {
+                document.getElementById('spokenColor').innerText = speechRec.resultString;
+            }
+        }
+    </script>
+</body>
+</html>

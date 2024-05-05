@@ -1,0 +1,85 @@
+/* General styles */
+@font-face {
+    font-family: 'Little Kids Handwriting';
+    src: url('LittleKidsHandwriting-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+img:hover {
+    transform: scale(1.1); /* Enlarge the image by 10% on hover */
+}
+
+body {
+    font-family: 'Little Kids Handwriting', cursive;
+    background-color: orange;
+    margin: 0;
+    padding: 0;
+    font-size: 22px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.left {
+    flex: 1;
+    padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    margin-top: -70px;
+}
+
+
+
+.right {
+    flex: 1;
+    padding-left: 20px;
+}
+
+/* Styles for the list of words on the right side */
+.right h2 {
+    margin-bottom: 10px;
+}
+
+.right table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.right td {
+    padding: 7px;
+    text-align: center;
+}
+
+.right td:hover {
+    font-size: 110%;
+    cursor: pointer;
+}
+
+/* Button styles */
+button {
+    background-color: #000; /* Black background color */
+    margin-top: 20px; 
+    color: white; /* White text color */
+    padding: 10px 20px; /* Padding around the text */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add rounded corners */
+    text-transform: uppercase; /* Convert text to uppercase */
+    font-weight: bold; /* Bold text */
+    cursor: pointer; /* Show pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+button:hover {
+    transform: scale(1.05); /* Enlarge button on hover */
+}
+
+

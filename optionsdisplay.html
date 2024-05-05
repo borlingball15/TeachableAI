@@ -1,0 +1,107 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Speech Recognition</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <img src="images/selectword.png" alt="Select Word" style="margin-top: 300px;">
+            <table id="wordTable"></table>
+            <button id="pickWord">SPEAK</button>
+            <p id="spokenWord" class="spoken-word"></p>
+            <button id="stopSpeech">Submit</button>
+            <div style="font-family: 'Little Kids Handwriting', cursive;"></div>
+            <a href="pickcolor.html">
+                <img src="images/frog .png" alt="Next Page" style="margin-bottom: 300px; width: 300px;">
+
+            </a>
+        </div>
+        <div class="right">
+
+            <table>
+                <tr>
+                    <td>alarm clock</td><td>ambulance</td><td>angel</td><td>ant</td><td>antyoga</td>
+                </tr>
+                <tr>
+                    <td>backpack</td><td>barn</td><td>basket</td><td>bear</td><td>bee</td>
+                </tr>
+                <tr>
+                    <td>beeflower</td><td>bicycle</td><td>bird</td><td>book</td><td>brain</td>
+                </tr>
+                <tr>
+                    <td>bridge</td><td>bulldozer</td><td>bus</td><td>butterfly</td><td>cactus</td>
+                </tr>
+                <tr>
+                    <td>calendar</td><td>castle</td><td>cat</td><td>catbus</td><td>catpig</td>
+                </tr>
+                <tr>
+                    <td>chair</td><td>couch</td><td>crab</td><td>crabchair</td><td>crabrabbitfacepig</td>
+                </tr>
+                <tr>
+                    <td>cruise ship</td><td>diving board</td><td>dog</td><td>dogbunny</td><td>dolphin</td>
+                </tr>
+                <tr>
+                    <td>duck</td><td>elephant</td><td>elephantpig</td><td>eye</td><td>face</td>
+                </tr>
+                <tr>
+                    <td>fan</td><td>fire hydrant</td><td>firetruck</td><td>flamingo</td><td>flower</td>
+                </tr>
+                <tr>
+                    <td>floweryoga</td><td>frog</td><td>frogsofa</td><td>garden</td><td>hand</td>
+                </tr>
+                <tr>
+                    <td>hedgeberry</td><td>hedgehog</td><td>helicopter</td><td>kangaroo</td><td>key</td>
+                </tr>
+                <tr>
+                    <td>lantern</td><td>lighthouse</td><td>lion</td><td>lionsheep</td><td>lobster</td>
+                </tr>
+                <tr>
+                    <td>map</td><td>mermaid</td><td>monapassport</td><td>monkey</td><td>mosquito</td>
+                </tr>
+                <tr>
+                    <td>octopus</td><td>owl</td><td>paintbrush</td><td>palm tree</td><td>parrot</td>
+                </tr>
+                <tr>
+                    <td>passport</td><td>peas</td><td>penguin</td><td>pig</td><td>pigsheep</td>
+                </tr>
+                <tr>
+                    <td>pineapple</td><td>pool</td><td>postcard</td><td>power outlet</td><td>rabbit</td>
+                </tr>
+                <tr>
+                    <td>rabbitturtle</td><td>radio</td><td>radioface</td><td>rain</td><td>rhinoceros</td>
+                </tr>
+                <tr>
+                    <td>rifle</td><td>roller coaster</td><td>sandwich</td><td>scorpion</td><td>sea turtle</td>
+                </tr>
+                <tr>
+                    <td>sheep</td><td>skull</td><td>snail</td><td>snowflake</td><td>speedboat</td>
+                </tr>
+                <tr>
+                    <td>spider</td><td>squirrel</td><td>steak</td><td>stove</td><td>strawberry</td>
+                </tr>
+                <tr>
+                    <td>swan</td><td>swing set</td><td>the mona lisa</td><td>tiger</td><td>toothbrush</td>
+                </tr>
+                <tr>
+                    <td>toothpaste</td><td>tractor</td><td>trombone</td><td>truck</td><td>whale</td>
+                </tr>
+                <tr>
+                    <td>windmill</td><td>yoga</td><td>yogabicycle</td><td>everything</td><td></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/addons/p5.sound.min.js"></script>
+    <script src="p5.speech.js"></script>
+    <script src="sketch.js"></script>
+</body>
+</html>

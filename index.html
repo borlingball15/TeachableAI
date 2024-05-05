@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's Doodle with AI</title>
+    <style>
+        body {
+            font-family: Helvetica, sans-serif;
+            text-transform: lowercase;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 20vh; /* Vertical margin to center the text */
+            opacity: 0; /* Start with opacity 0 */
+            animation: fadeIn 1s forwards; /* Apply fade-in animation to body */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0; /* Start with opacity 0 */
+            }
+
+            to {
+                opacity: 1; /* Fade in to opacity 1 */
+            }
+        }
+
+        h1 {
+            font-size: 150px; /* Large font size */
+            margin-bottom: 50px; /* Add margin below the title */
+            /* Set initial color */
+            color: black;
+            /* Add transition for smooth color change */
+            transition: color 0.5s;
+        }
+
+        h1:hover {
+            /* Change color to rainbow gradient on hover */
+            color: transparent;
+            background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
+            /* Apply gradient to text */
+            -webkit-background-clip: text;
+            background-clip: text;
+            /* Hide original text to show only gradient */
+            -webkit-text-fill-color: transparent;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-around; /* Align items with space around them */
+            align-items: flex-start; /* Align items at the start of the container */
+        }
+
+        .image-container img {
+            transition: transform 0.3s, filter 0.3s;
+            width: 200px; /* Set a fixed width for the images */
+            height: auto; /* Maintain aspect ratio */
+            opacity: 0; /* Start with opacity 0 */
+            animation: fadeInImage 1s forwards; /* Apply fade-in animation to images */
+        }
+
+        @keyframes fadeInImage {
+            from {
+                opacity: 0; /* Start with opacity 0 */
+            }
+
+            to {
+                opacity: 1; /* Fade in to opacity 1 */
+            }
+        }
+
+        .image-container img:hover {
+            transform: scale(1.1) rotate(-5deg);
+            filter: brightness(90%);
+        }
+
+        .text-overlay {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .image-container img:first-child:hover + .text-overlay {
+            display: block;
+        }
+
+        .text-overlay p {
+            margin: 0;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Let's Doodle with AI</h1>
+    <div class="image-container">
+        <div>
+            <img src="images/face1.png" alt="Face 1">
+            <div class="text-overlay"><p>this will use your cool voice as an input!</p></div>
+        </div>
+        <a href="optionsdisplay.html"><img src="images/face2.png" alt="Face 2"></a>
+    </div>
+</body>
+
+</html>
